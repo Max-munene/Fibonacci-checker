@@ -6,23 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<h1>Leap year checker</h1>
+<p>
+    Enter Year: 
+</p>
+<input id="InputYr" type="number" required="required" />
+<button onclick="checkLeapYear()">Check</button>
+<h2 id="IsLeap"></h2>
+
 <body>
     <script>
         // check leap year
-function checkLeapYear(year) {
+const checkLeapYear=()=> {
 
-    //three conditions to find out the leap year
+    
+    InputYr = document.getElementById("InputYr").value;// Read input from user
+    var year = InputYr; //initialize year to input
+
+    // conditions to find out the leap year
     if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
-        console.log(year + ' is a leap year');
+        document.getElementById("IsLeap").innerHTML = InputYr + " is a Leap Year";
+
     } else {
-        console.log(year + ' is not a leap year');
+        document.getElementById("IsLeap").innerHTML = InputYr + " is not a Leap Year";
     }
 }
 
-// take input
-const year = prompt('Enter a year:');
-
-checkLeapYear(year);
     </script>
 </body>
 </html>
